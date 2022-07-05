@@ -1,0 +1,3723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllCities">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCitiesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewCar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ca" type="tns:Cars" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cars">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TruckID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TruckName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Picture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewCarResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetIdOrderFromDeliveriesDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iddelivry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIdOrderFromDeliveriesDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIdOrderFromDeliveriesDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNameCarFromIdCar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idcar" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNameCarFromIdCarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNameCarFromIdCarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDelivery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="d" type="tns:Delivery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Delivery">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TruckID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Idss" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateDeliveryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IsWorker">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsWorkerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsWorkerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFeedback">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="tns:Feedback" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Feedback">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Worker" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Professionalism" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HumanRelation" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Satisfaction" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddFeedbackResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchFeedback">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="by" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchFeedbackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchFeedbackResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GaveFidback">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trainer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GaveFidbackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GaveFidbackResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFidback">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trainer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFidbackResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchFeedbackBy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trainer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="month" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchFeedbackByResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchFeedbackByResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCars">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Cars" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCarsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCars">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCarsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCarsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByStatuscar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByStatuscarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByStatuscarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCarName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCarNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByCarNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByIdCar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idcar" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByIdCarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByIdCarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewDelivery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="d" type="tns:Delivery" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewDeliveryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewDeliveryDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dde" type="tns:DeliveryDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeliveryDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewDeliveryDetailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchDeliveryId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchDeliveryIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SearchDeliveryIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarIdFromCarName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCarIdFromCarNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCarIdFromCarNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchOrderByIdOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchOrderByIdOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchOrderByIdOrderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCityName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="q" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCityNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCityNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderByStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderByStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderByStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientDeliveries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idclient" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientDeliveriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientDeliveriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientDeliveriesFromStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idclient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientDeliveriesFromStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientDeliveriesFromStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDeliveries">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllDeliveriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDeliveriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByIdDeliveryID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iddelivery" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idclient" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByIdDeliveryIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByIdDeliveryIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchDeliveryByIdCar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idcar" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchDeliveryByIdCarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchDeliveryByIdCarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByIdDelivery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iddelivery" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByIdDeliveryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByIdDeliveryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCarId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="car" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idclient" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCarIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByCarIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByStatusDelivery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByStatusDeliveryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByStatusDeliveryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeliveriesByStatusDriver">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iddriver" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeliveriesByStatusDriverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeliveriesByStatusDriverResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDeliveriesByIdClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDeliveriesByIdClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDeliveriesByIdClientResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientDeliveriesFromDeliveryId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idclient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iddelivery" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientDeliveriesFromDeliveryIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientDeliveriesFromDeliveryIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderDetailsByStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderDetailsByStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderDetailsByStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Client">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Birth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="City" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numadress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Level" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddNewClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Insertnewacc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertnewaccResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Updateclient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Client" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateclientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="HasClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HasClientResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchBySql">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchBySqlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchBySqlResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByaSql">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByaSqlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByaSqlResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllWorker">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllWorkerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllWorkerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Citynam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CitynamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CitynamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delet_Client">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delet_ClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Restor_Client">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Restor_ClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllClientsByField">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchCriteria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllClientsByFieldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllClientsByFieldResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllClients">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllClientsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllClientsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlipClientStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlipClientStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetKindNam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="q" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKindNamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKindNamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllProductsByKind">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="typecode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllProductsByKindResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllProductsByKindResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="q" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupplierNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSupplierNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetViewOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetViewOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetViewOrdersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllProducts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllProductsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllProductsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByIdProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idproduct" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByIdProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByIdProductResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllKinds">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllKindsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllKindsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSup">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSupResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByStatusProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByStatusProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByStatusProductResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByNameProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NameProduct" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByNameProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByNameProductResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCurrentAmountProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CurrentAmount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCurrentAmountProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByCurrentAmountProductResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCostProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CostProduct" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCostProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByCostProductResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByConsumerPrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsumerPrice" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByConsumerPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByConsumerPriceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Product">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MinAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaxAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConsumerPrice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DelResProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="delete" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelResProductResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddNewOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="o" type="tns:Orders" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Orders">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Idss" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CVV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Total" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Details" type="tns:OrderDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddNewOrderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="od" type="tns:OrderDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewOrderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchOrdersUse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchOrdersUseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchOrdersUseResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllOrders">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllOrdersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchUnderMinProduct">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchUnderMinProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchUnderMinProductResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchOrderDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchOrderDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchOrderDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncreaseCurrentQuantit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncreaseCurrentQuantitResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateOrderStatu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderStatuResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchClientBasi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="first" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="last" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchClientBasiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchClientBasiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCreditCarda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Card" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Card">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Idss" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpiryDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CVV" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddCreditCardaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddOrderDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="details" type="tns:OrderDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrderDetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DecreaseCurrentQuantity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dec" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DecreaseCurrentQuantityResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchOrderId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchOrderIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchOrderIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchCardCod">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchCardCodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SearchCardCodResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllCitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCities" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewCarSoapIn">
+    <wsdl:part name="parameters" element="tns:NewCar" />
+  </wsdl:message>
+  <wsdl:message name="NewCarSoapOut">
+    <wsdl:part name="parameters" element="tns:NewCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIdOrderFromDeliveriesDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIdOrderFromDeliveriesDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetIdOrderFromDeliveriesDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIdOrderFromDeliveriesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNameCarFromIdCarSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNameCarFromIdCar" />
+  </wsdl:message>
+  <wsdl:message name="GetNameCarFromIdCarSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNameCarFromIdCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDeliverySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDelivery" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDeliverySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsWorkerSoapIn">
+    <wsdl:part name="parameters" element="tns:IsWorker" />
+  </wsdl:message>
+  <wsdl:message name="IsWorkerSoapOut">
+    <wsdl:part name="parameters" element="tns:IsWorkerResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFeedbackSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFeedback" />
+  </wsdl:message>
+  <wsdl:message name="AddFeedbackSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchFeedbackSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchFeedback" />
+  </wsdl:message>
+  <wsdl:message name="SearchFeedbackSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="GaveFidbackSoapIn">
+    <wsdl:part name="parameters" element="tns:GaveFidback" />
+  </wsdl:message>
+  <wsdl:message name="GaveFidbackSoapOut">
+    <wsdl:part name="parameters" element="tns:GaveFidbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFidbackSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFidback" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFidbackSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFidbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchFeedbackBySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchFeedbackBy" />
+  </wsdl:message>
+  <wsdl:message name="SearchFeedbackBySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchFeedbackByResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCarsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCars" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCarsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCarsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCars" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCarsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByStatuscarSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByStatuscar" />
+  </wsdl:message>
+  <wsdl:message name="SearchByStatuscarSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByStatuscarResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCarNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByCarName" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCarNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByCarNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByIdCarSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByIdCar" />
+  </wsdl:message>
+  <wsdl:message name="SearchByIdCarSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByIdCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewDeliverySoapIn">
+    <wsdl:part name="parameters" element="tns:NewDelivery" />
+  </wsdl:message>
+  <wsdl:message name="NewDeliverySoapOut">
+    <wsdl:part name="parameters" element="tns:NewDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewDeliveryDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:NewDeliveryDetail" />
+  </wsdl:message>
+  <wsdl:message name="NewDeliveryDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:NewDeliveryDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchDeliveryIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchDeliveryId" />
+  </wsdl:message>
+  <wsdl:message name="SearchDeliveryIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchDeliveryIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCarIdFromCarNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCarIdFromCarName" />
+  </wsdl:message>
+  <wsdl:message name="GetCarIdFromCarNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCarIdFromCarNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrderByIdOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchOrderByIdOrder" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrderByIdOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchOrderByIdOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCityNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCityName" />
+  </wsdl:message>
+  <wsdl:message name="GetCityNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCityNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderByStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderByStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderByStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderByStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientDeliveriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientDeliveries" />
+  </wsdl:message>
+  <wsdl:message name="GetClientDeliveriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientDeliveriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientDeliveriesFromStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientDeliveriesFromStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetClientDeliveriesFromStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientDeliveriesFromStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDeliveriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDeliveries" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDeliveriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDeliveriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByIdDeliveryIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByIdDeliveryID" />
+  </wsdl:message>
+  <wsdl:message name="SearchByIdDeliveryIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByIdDeliveryIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchDeliveryByIdCarSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchDeliveryByIdCar" />
+  </wsdl:message>
+  <wsdl:message name="SearchDeliveryByIdCarSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchDeliveryByIdCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByIdDeliverySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByIdDelivery" />
+  </wsdl:message>
+  <wsdl:message name="SearchByIdDeliverySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByIdDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCarIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByCarId" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCarIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByCarIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByStatusDeliverySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByStatusDelivery" />
+  </wsdl:message>
+  <wsdl:message name="SearchByStatusDeliverySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByStatusDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeliveriesByStatusDriverSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeliveriesByStatusDriver" />
+  </wsdl:message>
+  <wsdl:message name="GetDeliveriesByStatusDriverSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeliveriesByStatusDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDeliveriesByIdClientSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDeliveriesByIdClient" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDeliveriesByIdClientSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDeliveriesByIdClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientDeliveriesFromDeliveryIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientDeliveriesFromDeliveryId" />
+  </wsdl:message>
+  <wsdl:message name="GetClientDeliveriesFromDeliveryIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientDeliveriesFromDeliveryIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsByStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailsByStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsByStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailsByStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewClientSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewClient" />
+  </wsdl:message>
+  <wsdl:message name="AddNewClientSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertnewaccSoapIn">
+    <wsdl:part name="parameters" element="tns:Insertnewacc" />
+  </wsdl:message>
+  <wsdl:message name="InsertnewaccSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertnewaccResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateclientSoapIn">
+    <wsdl:part name="parameters" element="tns:Updateclient" />
+  </wsdl:message>
+  <wsdl:message name="UpdateclientSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateclientResponse" />
+  </wsdl:message>
+  <wsdl:message name="HasClientSoapIn">
+    <wsdl:part name="parameters" element="tns:HasClient" />
+  </wsdl:message>
+  <wsdl:message name="HasClientSoapOut">
+    <wsdl:part name="parameters" element="tns:HasClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchById" />
+  </wsdl:message>
+  <wsdl:message name="SearchByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchBySqlSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchBySql" />
+  </wsdl:message>
+  <wsdl:message name="SearchBySqlSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchBySqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByaSqlSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByaSql" />
+  </wsdl:message>
+  <wsdl:message name="SearchByaSqlSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByaSqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllWorkerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllWorker" />
+  </wsdl:message>
+  <wsdl:message name="GetAllWorkerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllWorkerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CitynamSoapIn">
+    <wsdl:part name="parameters" element="tns:Citynam" />
+  </wsdl:message>
+  <wsdl:message name="CitynamSoapOut">
+    <wsdl:part name="parameters" element="tns:CitynamResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delet_ClientSoapIn">
+    <wsdl:part name="parameters" element="tns:Delet_Client" />
+  </wsdl:message>
+  <wsdl:message name="Delet_ClientSoapOut">
+    <wsdl:part name="parameters" element="tns:Delet_ClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="Restor_ClientSoapIn">
+    <wsdl:part name="parameters" element="tns:Restor_Client" />
+  </wsdl:message>
+  <wsdl:message name="Restor_ClientSoapOut">
+    <wsdl:part name="parameters" element="tns:Restor_ClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllClientsByFieldSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllClientsByField" />
+  </wsdl:message>
+  <wsdl:message name="GetAllClientsByFieldSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllClientsByFieldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllClientsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllClients" />
+  </wsdl:message>
+  <wsdl:message name="GetAllClientsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FlipClientStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:FlipClientStatus" />
+  </wsdl:message>
+  <wsdl:message name="FlipClientStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:FlipClientStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKindNamSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKindNam" />
+  </wsdl:message>
+  <wsdl:message name="GetKindNamSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKindNamResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsByKindSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllProductsByKind" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsByKindSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllProductsByKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSupplierName" />
+  </wsdl:message>
+  <wsdl:message name="GetSupplierNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSupplierNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetViewOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetViewOrders" />
+  </wsdl:message>
+  <wsdl:message name="GetViewOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetViewOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByIdProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByIdProduct" />
+  </wsdl:message>
+  <wsdl:message name="SearchByIdProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByIdProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllKindsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllKinds" />
+  </wsdl:message>
+  <wsdl:message name="GetAllKindsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllKindsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSup" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSupResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByStatusProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByStatusProduct" />
+  </wsdl:message>
+  <wsdl:message name="SearchByStatusProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByStatusProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByNameProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByNameProduct" />
+  </wsdl:message>
+  <wsdl:message name="SearchByNameProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByNameProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCurrentAmountProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByCurrentAmountProduct" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCurrentAmountProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByCurrentAmountProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCostProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByCostProduct" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCostProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByCostProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByConsumerPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByConsumerPrice" />
+  </wsdl:message>
+  <wsdl:message name="SearchByConsumerPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByConsumerPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProductSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="AddProductSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelResProductSoapIn">
+    <wsdl:part name="parameters" element="tns:DelResProduct" />
+  </wsdl:message>
+  <wsdl:message name="DelResProductSoapOut">
+    <wsdl:part name="parameters" element="tns:DelResProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewOrder" />
+  </wsdl:message>
+  <wsdl:message name="AddNewOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:NewOrder" />
+  </wsdl:message>
+  <wsdl:message name="NewOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:NewOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrdersUseSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchOrdersUse" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrdersUseSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchOrdersUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllOrders" />
+  </wsdl:message>
+  <wsdl:message name="GetAllOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchUnderMinProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchUnderMinProduct" />
+  </wsdl:message>
+  <wsdl:message name="SearchUnderMinProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchUnderMinProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrderDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrderDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IncreaseCurrentQuantitSoapIn">
+    <wsdl:part name="parameters" element="tns:IncreaseCurrentQuantit" />
+  </wsdl:message>
+  <wsdl:message name="IncreaseCurrentQuantitSoapOut">
+    <wsdl:part name="parameters" element="tns:IncreaseCurrentQuantitResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderStatuSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatu" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderStatuSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatuResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchClientBasiSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchClientBasi" />
+  </wsdl:message>
+  <wsdl:message name="SearchClientBasiSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchClientBasiResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCreditCardaSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCreditCarda" />
+  </wsdl:message>
+  <wsdl:message name="AddCreditCardaSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCreditCardaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrderDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="AddOrderDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DecreaseCurrentQuantitySoapIn">
+    <wsdl:part name="parameters" element="tns:DecreaseCurrentQuantity" />
+  </wsdl:message>
+  <wsdl:message name="DecreaseCurrentQuantitySoapOut">
+    <wsdl:part name="parameters" element="tns:DecreaseCurrentQuantityResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrderIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchOrderId" />
+  </wsdl:message>
+  <wsdl:message name="SearchOrderIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchOrderIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchCardCodSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchCardCod" />
+  </wsdl:message>
+  <wsdl:message name="SearchCardCodSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchCardCodResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="GetAllCities">
+      <wsdl:input message="tns:GetAllCitiesSoapIn" />
+      <wsdl:output message="tns:GetAllCitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewCar">
+      <wsdl:input message="tns:NewCarSoapIn" />
+      <wsdl:output message="tns:NewCarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdOrderFromDeliveriesDetails">
+      <wsdl:input message="tns:GetIdOrderFromDeliveriesDetailsSoapIn" />
+      <wsdl:output message="tns:GetIdOrderFromDeliveriesDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNameCarFromIdCar">
+      <wsdl:input message="tns:GetNameCarFromIdCarSoapIn" />
+      <wsdl:output message="tns:GetNameCarFromIdCarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDelivery">
+      <wsdl:input message="tns:UpdateDeliverySoapIn" />
+      <wsdl:output message="tns:UpdateDeliverySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsWorker">
+      <wsdl:input message="tns:IsWorkerSoapIn" />
+      <wsdl:output message="tns:IsWorkerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedback">
+      <wsdl:input message="tns:AddFeedbackSoapIn" />
+      <wsdl:output message="tns:AddFeedbackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchFeedback">
+      <wsdl:input message="tns:SearchFeedbackSoapIn" />
+      <wsdl:output message="tns:SearchFeedbackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GaveFidback">
+      <wsdl:input message="tns:GaveFidbackSoapIn" />
+      <wsdl:output message="tns:GaveFidbackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFidback">
+      <wsdl:input message="tns:DeleteFidbackSoapIn" />
+      <wsdl:output message="tns:DeleteFidbackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchFeedbackBy">
+      <wsdl:input message="tns:SearchFeedbackBySoapIn" />
+      <wsdl:output message="tns:SearchFeedbackBySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCars">
+      <wsdl:input message="tns:UpdateCarsSoapIn" />
+      <wsdl:output message="tns:UpdateCarsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCars">
+      <wsdl:input message="tns:GetAllCarsSoapIn" />
+      <wsdl:output message="tns:GetAllCarsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByStatuscar">
+      <wsdl:input message="tns:SearchByStatuscarSoapIn" />
+      <wsdl:output message="tns:SearchByStatuscarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCarName">
+      <wsdl:input message="tns:SearchByCarNameSoapIn" />
+      <wsdl:output message="tns:SearchByCarNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdCar">
+      <wsdl:input message="tns:SearchByIdCarSoapIn" />
+      <wsdl:output message="tns:SearchByIdCarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewDelivery">
+      <wsdl:input message="tns:NewDeliverySoapIn" />
+      <wsdl:output message="tns:NewDeliverySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewDeliveryDetail">
+      <wsdl:input message="tns:NewDeliveryDetailSoapIn" />
+      <wsdl:output message="tns:NewDeliveryDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDeliveryId">
+      <wsdl:input message="tns:SearchDeliveryIdSoapIn" />
+      <wsdl:output message="tns:SearchDeliveryIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarIdFromCarName">
+      <wsdl:input message="tns:GetCarIdFromCarNameSoapIn" />
+      <wsdl:output message="tns:GetCarIdFromCarNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <wsdl:input message="tns:UpdateOrderStatusSoapIn" />
+      <wsdl:output message="tns:UpdateOrderStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrderByIdOrder">
+      <wsdl:input message="tns:SearchOrderByIdOrderSoapIn" />
+      <wsdl:output message="tns:SearchOrderByIdOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityName">
+      <wsdl:input message="tns:GetCityNameSoapIn" />
+      <wsdl:output message="tns:GetCityNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByStatus">
+      <wsdl:input message="tns:GetOrderByStatusSoapIn" />
+      <wsdl:output message="tns:GetOrderByStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeliveries">
+      <wsdl:input message="tns:GetClientDeliveriesSoapIn" />
+      <wsdl:output message="tns:GetClientDeliveriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeliveriesFromStatus">
+      <wsdl:input message="tns:GetClientDeliveriesFromStatusSoapIn" />
+      <wsdl:output message="tns:GetClientDeliveriesFromStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeliveries">
+      <wsdl:input message="tns:GetAllDeliveriesSoapIn" />
+      <wsdl:output message="tns:GetAllDeliveriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdDeliveryID">
+      <wsdl:input message="tns:SearchByIdDeliveryIDSoapIn" />
+      <wsdl:output message="tns:SearchByIdDeliveryIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDeliveryByIdCar">
+      <wsdl:input message="tns:SearchDeliveryByIdCarSoapIn" />
+      <wsdl:output message="tns:SearchDeliveryByIdCarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdDelivery">
+      <wsdl:input message="tns:SearchByIdDeliverySoapIn" />
+      <wsdl:output message="tns:SearchByIdDeliverySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCarId">
+      <wsdl:input message="tns:SearchByCarIdSoapIn" />
+      <wsdl:output message="tns:SearchByCarIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByStatusDelivery">
+      <wsdl:input message="tns:SearchByStatusDeliverySoapIn" />
+      <wsdl:output message="tns:SearchByStatusDeliverySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveriesByStatusDriver">
+      <wsdl:input message="tns:GetDeliveriesByStatusDriverSoapIn" />
+      <wsdl:output message="tns:GetDeliveriesByStatusDriverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeliveriesByIdClient">
+      <wsdl:input message="tns:GetAllDeliveriesByIdClientSoapIn" />
+      <wsdl:output message="tns:GetAllDeliveriesByIdClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeliveriesFromDeliveryId">
+      <wsdl:input message="tns:GetClientDeliveriesFromDeliveryIdSoapIn" />
+      <wsdl:output message="tns:GetClientDeliveriesFromDeliveryIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetailsByStatus">
+      <wsdl:input message="tns:GetOrderDetailsByStatusSoapIn" />
+      <wsdl:output message="tns:GetOrderDetailsByStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewClient">
+      <wsdl:input message="tns:AddNewClientSoapIn" />
+      <wsdl:output message="tns:AddNewClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertnewacc">
+      <wsdl:input message="tns:InsertnewaccSoapIn" />
+      <wsdl:output message="tns:InsertnewaccSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Updateclient">
+      <wsdl:input message="tns:UpdateclientSoapIn" />
+      <wsdl:output message="tns:UpdateclientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HasClient">
+      <wsdl:input message="tns:HasClientSoapIn" />
+      <wsdl:output message="tns:HasClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchById">
+      <wsdl:input message="tns:SearchByIdSoapIn" />
+      <wsdl:output message="tns:SearchByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBySql">
+      <wsdl:input message="tns:SearchBySqlSoapIn" />
+      <wsdl:output message="tns:SearchBySqlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByaSql">
+      <wsdl:input message="tns:SearchByaSqlSoapIn" />
+      <wsdl:output message="tns:SearchByaSqlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWorker">
+      <wsdl:input message="tns:GetAllWorkerSoapIn" />
+      <wsdl:output message="tns:GetAllWorkerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Citynam">
+      <wsdl:input message="tns:CitynamSoapIn" />
+      <wsdl:output message="tns:CitynamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delet_Client">
+      <wsdl:input message="tns:Delet_ClientSoapIn" />
+      <wsdl:output message="tns:Delet_ClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Restor_Client">
+      <wsdl:input message="tns:Restor_ClientSoapIn" />
+      <wsdl:output message="tns:Restor_ClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClientsByField">
+      <wsdl:input message="tns:GetAllClientsByFieldSoapIn" />
+      <wsdl:output message="tns:GetAllClientsByFieldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClients">
+      <wsdl:input message="tns:GetAllClientsSoapIn" />
+      <wsdl:output message="tns:GetAllClientsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FlipClientStatus">
+      <wsdl:input message="tns:FlipClientStatusSoapIn" />
+      <wsdl:output message="tns:FlipClientStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKindNam">
+      <wsdl:input message="tns:GetKindNamSoapIn" />
+      <wsdl:output message="tns:GetKindNamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsByKind">
+      <wsdl:input message="tns:GetAllProductsByKindSoapIn" />
+      <wsdl:output message="tns:GetAllProductsByKindSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierName">
+      <wsdl:input message="tns:GetSupplierNameSoapIn" />
+      <wsdl:output message="tns:GetSupplierNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViewOrders">
+      <wsdl:input message="tns:GetViewOrdersSoapIn" />
+      <wsdl:output message="tns:GetViewOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input message="tns:GetAllProductsSoapIn" />
+      <wsdl:output message="tns:GetAllProductsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdProduct">
+      <wsdl:input message="tns:SearchByIdProductSoapIn" />
+      <wsdl:output message="tns:SearchByIdProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllKinds">
+      <wsdl:input message="tns:GetAllKindsSoapIn" />
+      <wsdl:output message="tns:GetAllKindsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSup">
+      <wsdl:input message="tns:GetAllSupSoapIn" />
+      <wsdl:output message="tns:GetAllSupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByStatusProduct">
+      <wsdl:input message="tns:SearchByStatusProductSoapIn" />
+      <wsdl:output message="tns:SearchByStatusProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByNameProduct">
+      <wsdl:input message="tns:SearchByNameProductSoapIn" />
+      <wsdl:output message="tns:SearchByNameProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCurrentAmountProduct">
+      <wsdl:input message="tns:SearchByCurrentAmountProductSoapIn" />
+      <wsdl:output message="tns:SearchByCurrentAmountProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCostProduct">
+      <wsdl:input message="tns:SearchByCostProductSoapIn" />
+      <wsdl:output message="tns:SearchByCostProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByConsumerPrice">
+      <wsdl:input message="tns:SearchByConsumerPriceSoapIn" />
+      <wsdl:output message="tns:SearchByConsumerPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input message="tns:AddProductSoapIn" />
+      <wsdl:output message="tns:AddProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input message="tns:UpdateProductSoapIn" />
+      <wsdl:output message="tns:UpdateProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelResProduct">
+      <wsdl:input message="tns:DelResProductSoapIn" />
+      <wsdl:output message="tns:DelResProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewOrder">
+      <wsdl:input message="tns:AddNewOrderSoapIn" />
+      <wsdl:output message="tns:AddNewOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewOrder">
+      <wsdl:input message="tns:NewOrderSoapIn" />
+      <wsdl:output message="tns:NewOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrdersUse">
+      <wsdl:input message="tns:SearchOrdersUseSoapIn" />
+      <wsdl:output message="tns:SearchOrdersUseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <wsdl:input message="tns:GetAllOrdersSoapIn" />
+      <wsdl:output message="tns:GetAllOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUnderMinProduct">
+      <wsdl:input message="tns:SearchUnderMinProductSoapIn" />
+      <wsdl:output message="tns:SearchUnderMinProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrderDetail">
+      <wsdl:input message="tns:SearchOrderDetailSoapIn" />
+      <wsdl:output message="tns:SearchOrderDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseCurrentQuantit">
+      <wsdl:input message="tns:IncreaseCurrentQuantitSoapIn" />
+      <wsdl:output message="tns:IncreaseCurrentQuantitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatu">
+      <wsdl:input message="tns:UpdateOrderStatuSoapIn" />
+      <wsdl:output message="tns:UpdateOrderStatuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchClientBasi">
+      <wsdl:input message="tns:SearchClientBasiSoapIn" />
+      <wsdl:output message="tns:SearchClientBasiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCreditCarda">
+      <wsdl:input message="tns:AddCreditCardaSoapIn" />
+      <wsdl:output message="tns:AddCreditCardaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderDetails">
+      <wsdl:input message="tns:AddOrderDetailsSoapIn" />
+      <wsdl:output message="tns:AddOrderDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DecreaseCurrentQuantity">
+      <wsdl:input message="tns:DecreaseCurrentQuantitySoapIn" />
+      <wsdl:output message="tns:DecreaseCurrentQuantitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrderId">
+      <wsdl:input message="tns:SearchOrderIdSoapIn" />
+      <wsdl:output message="tns:SearchOrderIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCardCod">
+      <wsdl:input message="tns:SearchCardCodSoapIn" />
+      <wsdl:output message="tns:SearchCardCodSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllCities">
+      <soap:operation soapAction="http://tempuri.org/GetAllCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewCar">
+      <soap:operation soapAction="http://tempuri.org/NewCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdOrderFromDeliveriesDetails">
+      <soap:operation soapAction="http://tempuri.org/GetIdOrderFromDeliveriesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameCarFromIdCar">
+      <soap:operation soapAction="http://tempuri.org/GetNameCarFromIdCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDelivery">
+      <soap:operation soapAction="http://tempuri.org/UpdateDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsWorker">
+      <soap:operation soapAction="http://tempuri.org/IsWorker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedback">
+      <soap:operation soapAction="http://tempuri.org/AddFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchFeedback">
+      <soap:operation soapAction="http://tempuri.org/SearchFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GaveFidback">
+      <soap:operation soapAction="http://tempuri.org/GaveFidback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFidback">
+      <soap:operation soapAction="http://tempuri.org/DeleteFidback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchFeedbackBy">
+      <soap:operation soapAction="http://tempuri.org/SearchFeedbackBy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCars">
+      <soap:operation soapAction="http://tempuri.org/UpdateCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCars">
+      <soap:operation soapAction="http://tempuri.org/GetAllCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByStatuscar">
+      <soap:operation soapAction="http://tempuri.org/SearchByStatuscar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCarName">
+      <soap:operation soapAction="http://tempuri.org/SearchByCarName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdCar">
+      <soap:operation soapAction="http://tempuri.org/SearchByIdCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDelivery">
+      <soap:operation soapAction="http://tempuri.org/NewDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDeliveryDetail">
+      <soap:operation soapAction="http://tempuri.org/NewDeliveryDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDeliveryId">
+      <soap:operation soapAction="http://tempuri.org/SearchDeliveryId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarIdFromCarName">
+      <soap:operation soapAction="http://tempuri.org/GetCarIdFromCarName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrderStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrderByIdOrder">
+      <soap:operation soapAction="http://tempuri.org/SearchOrderByIdOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityName">
+      <soap:operation soapAction="http://tempuri.org/GetCityName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByStatus">
+      <soap:operation soapAction="http://tempuri.org/GetOrderByStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeliveries">
+      <soap:operation soapAction="http://tempuri.org/GetClientDeliveries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeliveriesFromStatus">
+      <soap:operation soapAction="http://tempuri.org/GetClientDeliveriesFromStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeliveries">
+      <soap:operation soapAction="http://tempuri.org/GetAllDeliveries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdDeliveryID">
+      <soap:operation soapAction="http://tempuri.org/SearchByIdDeliveryID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDeliveryByIdCar">
+      <soap:operation soapAction="http://tempuri.org/SearchDeliveryByIdCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdDelivery">
+      <soap:operation soapAction="http://tempuri.org/SearchByIdDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCarId">
+      <soap:operation soapAction="http://tempuri.org/SearchByCarId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByStatusDelivery">
+      <soap:operation soapAction="http://tempuri.org/SearchByStatusDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveriesByStatusDriver">
+      <soap:operation soapAction="http://tempuri.org/GetDeliveriesByStatusDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeliveriesByIdClient">
+      <soap:operation soapAction="http://tempuri.org/GetAllDeliveriesByIdClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeliveriesFromDeliveryId">
+      <soap:operation soapAction="http://tempuri.org/GetClientDeliveriesFromDeliveryId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetailsByStatus">
+      <soap:operation soapAction="http://tempuri.org/GetOrderDetailsByStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewClient">
+      <soap:operation soapAction="http://tempuri.org/AddNewClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertnewacc">
+      <soap:operation soapAction="http://tempuri.org/Insertnewacc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updateclient">
+      <soap:operation soapAction="http://tempuri.org/Updateclient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasClient">
+      <soap:operation soapAction="http://tempuri.org/HasClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchById">
+      <soap:operation soapAction="http://tempuri.org/SearchById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBySql">
+      <soap:operation soapAction="http://tempuri.org/SearchBySql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByaSql">
+      <soap:operation soapAction="http://tempuri.org/SearchByaSql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWorker">
+      <soap:operation soapAction="http://tempuri.org/GetAllWorker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Citynam">
+      <soap:operation soapAction="http://tempuri.org/Citynam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delet_Client">
+      <soap:operation soapAction="http://tempuri.org/Delet_Client" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Restor_Client">
+      <soap:operation soapAction="http://tempuri.org/Restor_Client" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClientsByField">
+      <soap:operation soapAction="http://tempuri.org/GetAllClientsByField" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClients">
+      <soap:operation soapAction="http://tempuri.org/GetAllClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlipClientStatus">
+      <soap:operation soapAction="http://tempuri.org/FlipClientStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKindNam">
+      <soap:operation soapAction="http://tempuri.org/GetKindNam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsByKind">
+      <soap:operation soapAction="http://tempuri.org/GetAllProductsByKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierName">
+      <soap:operation soapAction="http://tempuri.org/GetSupplierName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewOrders">
+      <soap:operation soapAction="http://tempuri.org/GetViewOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap:operation soapAction="http://tempuri.org/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdProduct">
+      <soap:operation soapAction="http://tempuri.org/SearchByIdProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllKinds">
+      <soap:operation soapAction="http://tempuri.org/GetAllKinds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSup">
+      <soap:operation soapAction="http://tempuri.org/GetAllSup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByStatusProduct">
+      <soap:operation soapAction="http://tempuri.org/SearchByStatusProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByNameProduct">
+      <soap:operation soapAction="http://tempuri.org/SearchByNameProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCurrentAmountProduct">
+      <soap:operation soapAction="http://tempuri.org/SearchByCurrentAmountProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCostProduct">
+      <soap:operation soapAction="http://tempuri.org/SearchByCostProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByConsumerPrice">
+      <soap:operation soapAction="http://tempuri.org/SearchByConsumerPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelResProduct">
+      <soap:operation soapAction="http://tempuri.org/DelResProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewOrder">
+      <soap:operation soapAction="http://tempuri.org/AddNewOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewOrder">
+      <soap:operation soapAction="http://tempuri.org/NewOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrdersUse">
+      <soap:operation soapAction="http://tempuri.org/SearchOrdersUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <soap:operation soapAction="http://tempuri.org/GetAllOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUnderMinProduct">
+      <soap:operation soapAction="http://tempuri.org/SearchUnderMinProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/SearchOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseCurrentQuantit">
+      <soap:operation soapAction="http://tempuri.org/IncreaseCurrentQuantit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatu">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrderStatu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchClientBasi">
+      <soap:operation soapAction="http://tempuri.org/SearchClientBasi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCreditCarda">
+      <soap:operation soapAction="http://tempuri.org/AddCreditCarda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderDetails">
+      <soap:operation soapAction="http://tempuri.org/AddOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecreaseCurrentQuantity">
+      <soap:operation soapAction="http://tempuri.org/DecreaseCurrentQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrderId">
+      <soap:operation soapAction="http://tempuri.org/SearchOrderId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCardCod">
+      <soap:operation soapAction="http://tempuri.org/SearchCardCod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllCities">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewCar">
+      <soap12:operation soapAction="http://tempuri.org/NewCar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdOrderFromDeliveriesDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetIdOrderFromDeliveriesDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameCarFromIdCar">
+      <soap12:operation soapAction="http://tempuri.org/GetNameCarFromIdCar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDelivery">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDelivery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsWorker">
+      <soap12:operation soapAction="http://tempuri.org/IsWorker" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedback">
+      <soap12:operation soapAction="http://tempuri.org/AddFeedback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchFeedback">
+      <soap12:operation soapAction="http://tempuri.org/SearchFeedback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GaveFidback">
+      <soap12:operation soapAction="http://tempuri.org/GaveFidback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFidback">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFidback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchFeedbackBy">
+      <soap12:operation soapAction="http://tempuri.org/SearchFeedbackBy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCars">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCars" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCars">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCars" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByStatuscar">
+      <soap12:operation soapAction="http://tempuri.org/SearchByStatuscar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCarName">
+      <soap12:operation soapAction="http://tempuri.org/SearchByCarName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdCar">
+      <soap12:operation soapAction="http://tempuri.org/SearchByIdCar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDelivery">
+      <soap12:operation soapAction="http://tempuri.org/NewDelivery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDeliveryDetail">
+      <soap12:operation soapAction="http://tempuri.org/NewDeliveryDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDeliveryId">
+      <soap12:operation soapAction="http://tempuri.org/SearchDeliveryId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarIdFromCarName">
+      <soap12:operation soapAction="http://tempuri.org/GetCarIdFromCarName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOrderStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrderByIdOrder">
+      <soap12:operation soapAction="http://tempuri.org/SearchOrderByIdOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityName">
+      <soap12:operation soapAction="http://tempuri.org/GetCityName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderByStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeliveries">
+      <soap12:operation soapAction="http://tempuri.org/GetClientDeliveries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeliveriesFromStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetClientDeliveriesFromStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeliveries">
+      <soap12:operation soapAction="http://tempuri.org/GetAllDeliveries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdDeliveryID">
+      <soap12:operation soapAction="http://tempuri.org/SearchByIdDeliveryID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDeliveryByIdCar">
+      <soap12:operation soapAction="http://tempuri.org/SearchDeliveryByIdCar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdDelivery">
+      <soap12:operation soapAction="http://tempuri.org/SearchByIdDelivery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCarId">
+      <soap12:operation soapAction="http://tempuri.org/SearchByCarId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByStatusDelivery">
+      <soap12:operation soapAction="http://tempuri.org/SearchByStatusDelivery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveriesByStatusDriver">
+      <soap12:operation soapAction="http://tempuri.org/GetDeliveriesByStatusDriver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeliveriesByIdClient">
+      <soap12:operation soapAction="http://tempuri.org/GetAllDeliveriesByIdClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeliveriesFromDeliveryId">
+      <soap12:operation soapAction="http://tempuri.org/GetClientDeliveriesFromDeliveryId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetailsByStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderDetailsByStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewClient">
+      <soap12:operation soapAction="http://tempuri.org/AddNewClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertnewacc">
+      <soap12:operation soapAction="http://tempuri.org/Insertnewacc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updateclient">
+      <soap12:operation soapAction="http://tempuri.org/Updateclient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasClient">
+      <soap12:operation soapAction="http://tempuri.org/HasClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchById">
+      <soap12:operation soapAction="http://tempuri.org/SearchById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBySql">
+      <soap12:operation soapAction="http://tempuri.org/SearchBySql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByaSql">
+      <soap12:operation soapAction="http://tempuri.org/SearchByaSql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWorker">
+      <soap12:operation soapAction="http://tempuri.org/GetAllWorker" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Citynam">
+      <soap12:operation soapAction="http://tempuri.org/Citynam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delet_Client">
+      <soap12:operation soapAction="http://tempuri.org/Delet_Client" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Restor_Client">
+      <soap12:operation soapAction="http://tempuri.org/Restor_Client" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClientsByField">
+      <soap12:operation soapAction="http://tempuri.org/GetAllClientsByField" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClients">
+      <soap12:operation soapAction="http://tempuri.org/GetAllClients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlipClientStatus">
+      <soap12:operation soapAction="http://tempuri.org/FlipClientStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKindNam">
+      <soap12:operation soapAction="http://tempuri.org/GetKindNam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsByKind">
+      <soap12:operation soapAction="http://tempuri.org/GetAllProductsByKind" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupplierName">
+      <soap12:operation soapAction="http://tempuri.org/GetSupplierName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewOrders">
+      <soap12:operation soapAction="http://tempuri.org/GetViewOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap12:operation soapAction="http://tempuri.org/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByIdProduct">
+      <soap12:operation soapAction="http://tempuri.org/SearchByIdProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllKinds">
+      <soap12:operation soapAction="http://tempuri.org/GetAllKinds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSup">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByStatusProduct">
+      <soap12:operation soapAction="http://tempuri.org/SearchByStatusProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByNameProduct">
+      <soap12:operation soapAction="http://tempuri.org/SearchByNameProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCurrentAmountProduct">
+      <soap12:operation soapAction="http://tempuri.org/SearchByCurrentAmountProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCostProduct">
+      <soap12:operation soapAction="http://tempuri.org/SearchByCostProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByConsumerPrice">
+      <soap12:operation soapAction="http://tempuri.org/SearchByConsumerPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap12:operation soapAction="http://tempuri.org/AddProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelResProduct">
+      <soap12:operation soapAction="http://tempuri.org/DelResProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewOrder">
+      <soap12:operation soapAction="http://tempuri.org/AddNewOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewOrder">
+      <soap12:operation soapAction="http://tempuri.org/NewOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrdersUse">
+      <soap12:operation soapAction="http://tempuri.org/SearchOrdersUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <soap12:operation soapAction="http://tempuri.org/GetAllOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUnderMinProduct">
+      <soap12:operation soapAction="http://tempuri.org/SearchUnderMinProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrderDetail">
+      <soap12:operation soapAction="http://tempuri.org/SearchOrderDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseCurrentQuantit">
+      <soap12:operation soapAction="http://tempuri.org/IncreaseCurrentQuantit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderStatu">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOrderStatu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchClientBasi">
+      <soap12:operation soapAction="http://tempuri.org/SearchClientBasi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCreditCarda">
+      <soap12:operation soapAction="http://tempuri.org/AddCreditCarda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrderDetails">
+      <soap12:operation soapAction="http://tempuri.org/AddOrderDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecreaseCurrentQuantity">
+      <soap12:operation soapAction="http://tempuri.org/DecreaseCurrentQuantity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrderId">
+      <soap12:operation soapAction="http://tempuri.org/SearchOrderId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCardCod">
+      <soap12:operation soapAction="http://tempuri.org/SearchCardCod" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:16534/ServiceSide/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:16534/ServiceSide/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

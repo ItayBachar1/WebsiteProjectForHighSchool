@@ -1,0 +1,127 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Design.master.cs" Inherits="Design" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+   <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+ <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Fashion store </a></h1>
+          <h2>By Eden Sadgiany</h2>
+        </div>
+      </div>
+      <div id="menubar">
+       <%if (Session["client"] == null)
+			{ %>
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="Home.aspx">Home</a></li>
+          <li><a href="Login.aspx">Login</a></li>
+          <li><a href="Reg.aspx">Register</a></li>
+         
+        </ul>
+        <%} %>
+
+         <%else
+               { %>
+                    <%if (level.Equals("client"))
+                      { %>
+
+          <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="Home.aspx">Home</a></li>
+          <li><a href="ClientArea.aspx">Your Area </a></li>
+          <li><a href="Update.aspx">Update</a></li>
+          <li><a href="Order.aspx">Order </a></li>
+          <li><a href="SearchOrder.aspx">Search orders</a></li>
+          <li><a href="Logout.aspx">Logout</a></li>
+        </ul>
+
+         <% } %>
+         
+           <%if (level.Equals("Worker"))
+                { %>
+                
+          <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="Home.aspx">Home</a></li>
+          <li><a href="WorkerArea.aspx">Your Area </a></li>
+          <li><a href="Update.aspx">Update</a></li>
+          <li><a href="DeleteAndSearch.aspx">Delete & Search Clients</a></li>
+          <li><a href="AddProduct.aspx"> Add product </a></li>
+          <li><a href="SearchProducts.aspx"> Search Products</a></li>
+          <li><a href="Order.aspx"> Order </a></li>
+          <li><a href="SearchOrder.aspx">Search orders </a></li>
+          <li><a href="Searchtruck.aspx"> trucks </a></li>
+          <li><a href="DeliverySearch.aspx"> Search delivery</a></li>
+
+
+
+  
+
+          <li><a href="Logout.aspx">Logout</a></li>
+        </ul>
+
+                                  <%} %>
+
+            <%if (level.Equals("Admin"))
+                                  { %>
+              <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="Home.aspx">Home</a></li>
+          <li><a href="AdminArea.aspx">Your Area </a></li>
+          <li><a href="Update.aspx">Update</a></li>
+          <li><a href="Insert.aspx">Insert People</a></li>
+          <li><a href="DeleteAndSearch.aspx">Delite & Search Clients</a></li>
+          <li><a href="AddProduct.aspx">Add Product</a></li>
+          <li><a href="SearchProducts.aspx"> Search Products</a></li>
+          <li><a href="Order.aspx">Order</a></li>
+          <li><a href="SearchOrder.aspx">Search order</a></li>
+          <li><a href="TruckAdd.aspx">Add truck</a></li>
+          <li><a href="Searchtruck.aspx">Search truck</a></li>
+          <li><a href="DeliverySearch.aspx">Search delivery</a></li>
+          <li><a href="FeedBackss.aspx">Feedbackss</a></li>
+           
+          <li><a href="Logout.aspx">Logout</a></li>
+        </ul>
+
+            <%} %>
+                 <%} %>
+
+
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+    </div>
+    <div id="content_footer">
+    <center>
+        <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </center>
+    </form>
+    </div>
+    </div>
+    <div id="footer">
+      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
+      <p>Copyright &copy; simplestyle_horizon | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">Simple web templates by HTML5</a></p>
+    </div>
+  </div>
+</body>
+</html>
